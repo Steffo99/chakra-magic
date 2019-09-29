@@ -8,7 +8,7 @@
     },
     
     "name": "Chakra Magic",
-    "version": "2019.09.29.1",
+    "version": "2019.09.29.2",
     "developer": {
         "name": "Stefano Pigozzi",
         "url": "https://github.com/Steffo99/instant-view-opener"
@@ -16,7 +16,9 @@
 
     "description": "Display which games you were reported and commended in!",
 
-    "permissions": [],
+    "background": {
+        "scripts": ["background.js"]
+    },
 
     "content_scripts": [
         {
@@ -28,5 +30,12 @@
 
     "icons": {
         "128": "icon128.png"
+    },
+
+    "browser_action": {
+        "default_icon": {
+            "128": "icon128.png"
+        },
+        "default_title": "Open reports/commends page"
     }
 }
