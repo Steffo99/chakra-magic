@@ -1,0 +1,21 @@
+.chakramagic-button {
+    vertical-align: middle;
+    padding: 0; 
+    border: 1px solid black;
+    background-color: black;
+    cursor: pointer;
+}
+
+.chakramagic-button:not([disabled]):hover {
+    border: 1px solid gray;
+}
+
+.chakramagic-button:not([disabled]):active {
+    border: 1px solid white;
+}
+
+.chakramagic-image {
+    width: 28px;
+    height: 28px;
+    vertical-align: middle;
+}

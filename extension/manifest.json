@@ -1,0 +1,32 @@
+{
+    "manifest_version": 2,
+
+    "applications": {
+        "gecko": {
+            "id": "chakramagic@steffo.eu"
+        }
+    },
+    
+    "name": "Chakra Magic",
+    "version": "2019.09.29.1",
+    "developer": {
+        "name": "Stefano Pigozzi",
+        "url": "https://github.com/Steffo99/instant-view-opener"
+    },
+
+    "description": "Display which games you were reported and commended in!",
+
+    "permissions": [],
+
+    "content_scripts": [
+        {
+            "matches": ["https://steamcommunity.com/*/gcpd/570?category=Account&tab=MatchPlayerReportIncoming"],
+            "js": ["gdpr_page.js"],
+            "css": ["gdpr_page.css"]
+        }
+    ],
+
+    "icons": {
+        "128": "icon128.png"
+    }
+}
