@@ -1,7 +1,11 @@
+let thisBrowser = null;
+if(!thisBrowser) try { thisBrowser = browser; } catch(e) {}
+if(!thisBrowser) try { thisBrowser = chrome; } catch(e) {}
+
 function openPage() {
-    browser.tabs.create({
+    thisBrowser.tabs.create({
         url: "https://steamcommunity.com/my/gcpd/570/?category=Account&tab=MatchPlayerReportIncoming"
     });
 }
 
-browser.browserAction.onClicked.addListener(openPage);
+thisBrowser.browserAction.onClicked.addListener(openPage);
