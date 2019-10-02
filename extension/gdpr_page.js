@@ -1,4 +1,6 @@
 function illuminate() {
+    let chakraElement = document.querySelector(".chakramagic-button");
+
     const read_data = () => {
         // Get player name, use this to match it to player name from API response
         const player_name = document.getElementsByClassName("profile_small_header_name")[0].children[0].textContent;
@@ -68,23 +70,14 @@ function illuminate() {
                 }
             }, 100);
         };
-        // Just visual indicator that the script is working
-        const b3 = document.getElementById("personaldata_elements_container");
-        if (!b3) return alert("Data table not found, make sure you are on steam GDPR page");
-        const h1 = document.createElement("h1");
-        const h1text = document.createTextNode("Loading more data ");
-        const h1spinner = document.createElement("img");
-        h1spinner.src = "https://steamcommunity-a.akamaihd.net/public/images/login/throbber.gif";
-        h1.appendChild(h1text);
-        h1.appendChild(h1spinner);
-        b3.insertBefore(h1, b3.childNodes[0]);
+        
         // Start checking loop
         watch_load_more();
     };
 
-    let chakraElement = document.querySelector(".chakramagic-button");
     chakraElement.setAttribute("disabled", "");
     chakraElement.setAttribute("onclick", "");
+    chakraElement.setAttribute("class", "chakramagic-button chakramagic-running")
 
     load_all_data();
 }

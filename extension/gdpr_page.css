@@ -1,17 +1,95 @@
 .chakramagic-button {
     vertical-align: middle;
-    padding: 0; 
-    border: 1px solid black;
-    background-color: black;
+    padding: 1px;
+    background: black;
     cursor: pointer;
+    border: none;
 }
 
-.chakramagic-button:not([disabled]):hover {
-    border: 1px solid gray;
+.chakramagic-button:not(.chakramagic-running):hover {
+    background: grey;
 }
 
-.chakramagic-button:not([disabled]):active {
-    border: 1px solid white;
+.chakramagic-button:not(.chakramagic-running):active {
+    background: white;
+}
+
+@keyframes running {
+    0% {
+        background: linear-gradient(0deg, orangered, yellow);
+    }
+
+    6.25% {
+        background: linear-gradient(22.5deg, orangered, yellow);
+    }
+    
+    12.5% {
+        background: linear-gradient(45deg, orangered, yellow);
+    }
+
+    18.75% {
+        background: linear-gradient(67.5deg, orangered, yellow);
+    }
+
+    25% {
+        background: linear-gradient(90deg, orangered, yellow);
+    }
+
+    31.25% {
+        background: linear-gradient(112.5deg, orangered, yellow);
+    }
+
+    37.5% {
+        background: linear-gradient(135deg, orangered, yellow);
+    }
+    
+    43.75% {
+        background: linear-gradient(157.5deg, orangered, yellow);
+    }
+
+    50% {
+        background: linear-gradient(180deg, orangered, yellow);
+    }
+    
+    56.25% {
+        background: linear-gradient(202.5deg, orangered, yellow);
+    }
+
+    62.5% {
+        background: linear-gradient(225deg, orangered, yellow);
+    }
+    
+    68.75% {
+        background: linear-gradient(247.5deg, orangered, yellow);
+    }
+
+    75% {
+        background: linear-gradient(270deg, orangered, yellow);
+    }
+    
+    81.25% {
+        background: linear-gradient(292.5deg, orangered, yellow);
+    }
+
+    87.5% {
+        background: linear-gradient(315deg, orangered, yellow);
+    }
+    
+    93.75% {
+        background: linear-gradient(337.5deg, orangered, yellow);
+    }
+    
+    100% {
+        background: linear-gradient(-0deg, orangered, yellow);
+    }
+}
+
+.chakramagic-button.chakramagic-running {
+    animation-name: running;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    cursor: wait;
 }
 
 .chakramagic-image {
