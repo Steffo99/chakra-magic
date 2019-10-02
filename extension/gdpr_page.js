@@ -94,15 +94,13 @@ function chakraMagic() {
 
     let chakraElement = document.createElement("button");
     parentElement.appendChild(chakraElement);
-    chakraElement.setAttribute("onclick", "illuminate()")
-    chakraElement.setAttribute("class", "chakramagic-button")
+    chakraElement.onclick = illuminate;
+    chakraElement.setAttribute("class", "chakramagic-button");
 
-    let imageElement = document.createElement("img")
+    let imageElement = document.createElement("img");
     chakraElement.appendChild(imageElement);
     imageElement.setAttribute("src", "http://cdn.dota2.com/apps/dota2/images/abilities/keeper_of_the_light_illuminate_hp2.png");
-    imageElement.setAttribute("class", "chakramagic-image")
-
-    exportFunction(illuminate, window, {defineAs: "illuminate"});
+    imageElement.setAttribute("class", "chakramagic-image");
 }
 
 chakraMagic();
