@@ -1,6 +1,9 @@
 .chakramagic-button {
     vertical-align: middle;
     padding: 1px;
+    width: 48px;
+    height: 48px;
+    color: white;
     background: black;
     cursor: pointer;
     border: none;
@@ -93,7 +96,20 @@
 }
 
 .chakramagic-image {
-    width: 28px;
-    height: 28px;
     vertical-align: middle;
+    width: 100%;
+    height: 100%;
+}
+
+.chakramagic-text {
+    margin-left: 4px;
+}
+
+.chakramagic-service {
+    display: flex;
+    align-items: center;
+}
+
+.chakramagic-button[disabled] {
+    opacity: 0.5;
 }

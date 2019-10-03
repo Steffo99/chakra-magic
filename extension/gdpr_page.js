@@ -1,5 +1,6 @@
 function illuminate() {
-    let chakraElement = document.querySelector(".chakramagic-button");
+    let illuminateButton = document.querySelector(".chakramagic-illuminate .chakramagic-button");
+    let illuminateText = document.querySelector(".chakramagic-illuminate .chakramagic-text").childNodes[0];
 
     const read_data = () => {
         // Get player name, use this to match it to player name from API response
@@ -75,25 +76,41 @@ function illuminate() {
         watch_load_more();
     };
 
-    chakraElement.setAttribute("disabled", "");
-    chakraElement.setAttribute("onclick", "");
-    chakraElement.setAttribute("class", "chakramagic-button chakramagic-running")
+    illuminateButton.setAttribute("disabled", "");
+    illuminateButton.onclick = null;
+    illuminateButton.setAttribute("class", "chakramagic-button chakramagic-running")
+
+    illuminateText.nodeValue = "Loading all data..."
 
     load_all_data();
 }
 
 function chakraMagic() {
-    let parentElement = document.querySelector(".profile_private_info_dropdowns");
+    let parentElement = document.querySelector("#mainContents");
+    let beforeElement = document.querySelector("#personaldata_elements_container")
 
-    let chakraElement = document.createElement("button");
-    parentElement.appendChild(chakraElement);
-    chakraElement.onclick = illuminate;
-    chakraElement.setAttribute("class", "chakramagic-button");
+    let chakraElement = document.createElement("div");
+    parentElement.insertBefore(chakraElement, beforeElement);
+    chakraElement.setAttribute("class", "chakramagic-container");
 
-    let imageElement = document.createElement("img");
-    chakraElement.appendChild(imageElement);
-    imageElement.setAttribute("src", "http://cdn.dota2.com/apps/dota2/images/abilities/keeper_of_the_light_illuminate_hp2.png");
-    imageElement.setAttribute("class", "chakramagic-image");
+    let illuminateElement = document.createElement("div");
+    chakraElement.appendChild(illuminateElement);
+    illuminateElement.setAttribute("class", "chakramagic-service chakramagic-illuminate");
+    
+    let illuminateButton = document.createElement("div");
+    illuminateElement.appendChild(illuminateButton);
+    illuminateButton.setAttribute("class", "chakramagic-button");
+    illuminateButton.onclick = illuminate;
+
+    let illuminateImage = document.createElement("img");
+    illuminateButton.appendChild(illuminateImage);
+    illuminateImage.setAttribute("src", "http://cdn.dota2.com/apps/dota2/images/abilities/keeper_of_the_light_illuminate_hp2.png");
+    illuminateImage.setAttribute("class", "chakramagic-image");
+
+    let illuminateText = document.createElement("span");
+    illuminateElement.appendChild(illuminateText);
+    illuminateText.appendChild(document.createTextNode("Parse data with Illuminate"));
+    illuminateText.setAttribute("class", "chakramagic-text chakramagic-illuminate");
 }
 
 chakraMagic();
