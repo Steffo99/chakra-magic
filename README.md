@@ -1,4 +1,4 @@
-# Chakra Magic
+# ![Chakra Magic](/opengraph.png)
 
 A WebExtension wrapper for [Illuminate](https://github.com/bongikairu/illuminate)!
 
