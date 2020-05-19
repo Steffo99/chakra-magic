@@ -2,6 +2,8 @@
 
 A WebExtension wrapper for [Illuminate](https://github.com/bongikairu/illuminate)!
 
+> **Since Illuminate isn't being updated any longer, this extension has been unlisted from Mozilla Addons.** 
+
 ## Licensing
 
 Chakra Magic is licensed under the [GPL 3.0 License](/license).
